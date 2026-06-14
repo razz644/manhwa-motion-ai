@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await fal.subscribe(
-      'fal-ai/kling-video/v3/standard/text-to-video',
+      'fal-ai/minimax/video-01-live',
       {
         input: {
           prompt,
