@@ -187,7 +187,54 @@ export default function GeneratePage() {
         saveToLibrary(video);
         setGenProgress(100);
         setGenStep("Done!");
-      } else {
+      } 
+      else if (selectedProvider === "fal") {
+
+  setGenStep("Generating with Fal AI...");
+  setGenProgress(20);
+
+  const response = await fetch("/api/fal", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      prompt: finalEnhanced,
+      duration: 5,
+      aspect_ratio: aspectRatio,
+    }),
+  });
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data.error || "Fal generation failed");
+  }
+
+  const video: GeneratedVideo = {
+    id: "vid_" + Date.now(),
+    userId: null,
+    prompt,
+    enhancedPrompt: finalEnhanced,
+    style: selectedStyle,
+    styleName: currentStyle.name,
+    aspectRatio,
+    provider: "fal",
+    duration: 5,
+    fps: 24,
+    videoUrl: data.videoUrl,
+    createdAt: new Date().toISOString(),
+    motionControls,
+    sceneAnalysis: currentAnalysis,
+  };
+
+  setGeneratedVideo(video);
+  saveToLibrary(video);
+
+  setGenProgress(100);
+  setGenStep("Done!");
+}
+      else {
         // === FALLBACK: Original procedural mock (for other providers) ===
         const result = await generateWithProvider(
           {
