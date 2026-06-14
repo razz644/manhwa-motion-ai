@@ -57,6 +57,9 @@ export const MOTION_CONTROLS: MotionControl[] = [
 export const VIDEO_PROVIDERS: VideoProvider[] = [
   { id: "veo3", name: "Google Veo 3", description: "Highest cinematic quality" },
   { id: "kling", name: "Kling AI 1.6", description: "Excellent motion & physics" },
+
+  { id: "fal", name: "Fal AI", description: "Real AI Video Generation" },
+
   { id: "runway", name: "Runway Gen-3 Alpha", description: "Premium filmic look" },
   { id: "pixverse", name: "PixVerse v4", description: "Fast, great character consistency" },
   { id: "luma", name: "Luma Dream Machine", description: "Creative & dreamlike motion" },
