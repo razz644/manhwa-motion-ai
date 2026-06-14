@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: #b91c1c;
+  --accent-light: #ef4444;
+}
+
+body {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.manhwa-card {
+  background-color: #141414;
+  border: 1px solid #27272a;
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1), 
+              border-color 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.manhwa-card:hover {
+  transform: translateY(-1px);
+  border-color: #3f3f46;
+  box-shadow: 0 10px 30px -15px rgb(0 0 0 / 0.6);
+}
+
+.manhwa-btn {
+  background-color: #b91c1c;
+  color: white;
+  font-weight: 600;
+  transition: all 0.1s ease;
+}
+
+.manhwa-btn:hover {
+  background-color: #991b1b;
+  transform: translateY(-1px);
+}
+
+.manhwa-btn-secondary {
+  background-color: #1f1f23;
+  color: #e5e5e7;
+  border: 1px solid #3f3f46;
+}
+
+.manhwa-btn-secondary:hover {
+  background-color: #27272a;
+  border-color: #52525b;
+}
+
+.progress-bar {
+  transition: width 180ms linear;
+}
+
+.style-chip {
+  transition: all 0.1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.style-chip.active,
+.style-chip:hover {
+  border-color: #b91c1c;
+  background-color: #1f1f23;
+  color: white;
+}
+
+.control-toggle {
+  transition: all 0.1s ease;
+}
+
+.control-toggle.active {
+  background-color: #3f1f1f;
+  border-color: #b91c1c;
+  color: #fecaca;
+}
+
+.video-player-container {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.canvas-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.scrubber {
+  accent-color: #b91c1c;
+}
+
+.analysis-chip {
+  background-color: #1f1f23;
+  border: 1px solid #3f3f46;
+  font-size: 12px;
+  padding: 1px 9px;
+  border-radius: 999px;
+}
+
+.logos {
+  filter: grayscale(1) brightness(0.8);
+}
+
+.glass {
+  background: rgba(20, 20, 20, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* Mobile responsive tweaks */
+@media (max-width: 768px) {
+  .manhwa-hero-title {
+    font-size: 2.35rem;
+    line-height: 1.05;
+  }
+}
